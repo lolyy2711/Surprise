@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surprise To Lolyy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+    }
+    h1 {
+      color: #333;
+      margin-top: 50px;
+      font-size: 36px;
+    }
+    #countdown {
+      font-size: 48px;
+      color: #FF0000;
+      margin-top: 50px;
+    }
+    .heart {
+      color: #ff69b4;
+      animation: beat 1.5s ease-in-out infinite;
+    }
+    #loly {
+      font-size: 48px;
+      color: #FF0000;
+      margin-top: 50px;
+    }
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Countdown to My Favorite One's Birthday</h1>
+  <div id="countdown">34 days left for my favorite one's birthday
+    <span class="heart">lolyy ♥️♥️♥️
+
+  </span></div>
+  <div id="loly"  >  i love you so much and want to spend all my time with you <br>
+    you main everything for me bgd </div>
+
+  <script>
+    // Set the date of your favorite one's birthday
+   // var birthday = new Date(); // Current date
+    //birthday.setDate(birthday.getDate() + 34); // Add 34 days to the current date
+
+    // Update the countdown every second
+   // var countdown = setInterval(function() {
+      var now = new Date().getTime(); // Current time
+      var distance = birthday - now; // Time remaining in milliseconds
+
+      // Calculate the days, hours, minutes, and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "It's your favorite one's birthday!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
